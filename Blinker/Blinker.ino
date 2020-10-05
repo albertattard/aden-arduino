@@ -11,41 +11,18 @@ void setup() {
 }
 
 void loop() {
-  red(HIGH);
-  blue(LOW);
-  green(LOW);
-
-  delay(waitTime);
-
-  red(LOW);
-  green(HIGH);
-  blue(LOW);
-
-  delay(waitTime);
-  red(LOW);
-  green(LOW);
-  blue(HIGH);
-
-  delay(waitTime);
-
-  blue(LOW);
-  green(HIGH);
-  red(LOW);
-
-  delay(waitTime);
-
-  blue(LOW);
-  green(LOW);
-  red(HIGH);
+  colour(redLed);
+  colour(greenLed);
+  colour(blueLed);
+  colour(greenLed);
 }
 
-void red(int state) {
-  digitalWrite(redLed, state);
-}
+void colour(int pin) {
+  digitalWrite(redLed, LOW);
+  digitalWrite(greenLed, LOW);
+  digitalWrite(blueLed, LOW);
 
-void blue(int state) {
-  digitalWrite(blueLed, state);
-}
-void green(int state) {
-  digitalWrite(greenLed, state);
+  digitalWrite(pin, HIGH);
+
+  delay(waitTime);
 }
